@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 
 
-const Perfil = () => {
+const Profile = () => {
     //AQUI FUNCIONALIDAD
 
 
@@ -15,3 +15,4 @@ const Perfil = () => {
 
     );
 };
+export default Profile;
