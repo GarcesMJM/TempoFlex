@@ -1,0 +1,54 @@
+#body {
+    background: linear-gradient(#ffffff, whitesmoke, #f0f0f0, #cacaca);
+}
+.banner {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+.title {
+    margin-top: 3rem;
+    color: black;
+    font-family: "Righteous", sans-serif;
+}
+.text {
+    color: black;
+    width: 50vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: larger;
+    font-family: "Prompt", sans-serif;
+}
+.buttons {
+    background-color: whitesmoke;
+    border: solid 2px #820000;
+    padding: 12px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 4vh;
+    font-family: "Righteous", sans-serif;
+    transition: 1s;
+}
+.buttons:hover {
+    color: whitesmoke;
+    background-color: #820000;
+    border: solid 2px whitesmoke;
+    box-shadow: 0 0 1rem red;
+    transition: 1s;
+}

@@ -1,0 +1,24 @@
+#background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.384), rgb(0, 0, 0)),
+                  url("https://cdn.pixabay.com/photo/2016/07/31/16/30/banner-1559405_960_720.jpg");
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+}
+.container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    color: whitesmoke;
+    font-family: "Jersey 25", sans-serif;
+    font-size: 2rem;
+    background-color: transparent;
+    box-shadow: 0 0 1rem whitesmoke;
+    border-radius: 20px;
+    margin: 2vh;
+}
