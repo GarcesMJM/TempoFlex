@@ -1,18 +1,11 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "../css/Perfil.css";
+import styles from '../css/Profile.css';
 
-import Swal from "sweetalert2";
+function Profile() {
+  return (
+    <div> 
+        Perfil
+    </div>
+  );
+}
 
-
-
-
-const Profile = () => {
-    //AQUI FUNCIONALIDAD
-
-
-    return(
-
-    );
-};
 export default Profile;
