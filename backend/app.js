@@ -1,41 +1,31 @@
-var createError = require('http-errors');
 var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const admin = require('firebase-admin');
+const cors = require('cors'); 
+const serviceAccount = require('C:\\Users\\Usuario\\Downloads\\firebaseclave.json');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const app = express();
 
-var app = express();
+// Inicializa Firebase con las credenciales
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+const db = admin.firestore(); // Inicialización de Firestore
 
-app.use(logger('dev'));
+
+app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+const routes = require('./routes/routes');
+app.use('/', routes);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+// Ruta de ejemplo
+app.get('/', (req, res) => {
+  res.send('¡Hola, mundo!');
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+// Escucha en el puerto 3000 o en el puerto especificado por el entorno
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
-
-module.exports = app;

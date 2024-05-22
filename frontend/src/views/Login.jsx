@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../css/Login.css";
-import imagen from "../assets/cat-2934720_1280.jpg";
+//import imagen from "../assets/cat-2934720_1280.jpg";
 //import "../css/Navbar.css";
 import Swal from "sweetalert2"; // Añade esta línea
 
@@ -31,6 +31,10 @@ const Login = () => {
   const navigate = useNavigate();
 
   const sendDataToBackend = async (e) => {
+    if (!email || !password || !username) {
+      Swal.fire("No puede haber campos vacíos", "", "error");
+    }
+
     try {
       const response = await fetch("http://localhost:5000/register", {
         method: "POST",
@@ -60,6 +64,9 @@ const Login = () => {
   };
 
   const sendDataToBackend2 = async (e, history) => {
+    if (!email || !password) {
+      Swal.fire("No puede haber campos vacíos", "", "error");
+    }
     try {
       const response = await fetch("http://localhost:5000/iniciarsesion", {
         method: "POST",
@@ -68,7 +75,6 @@ const Login = () => {
         },
         body: JSON.stringify({ email, password }),
       });
-
       const data = await response.json();
       console.log("Respuesta del servidor:", data.message);
 
@@ -77,7 +83,7 @@ const Login = () => {
 
       if (data.token) {
         localStorage.setItem("token", data.token);
-        navigate(`/profile/${data.usuario}`, { replace: true });
+        navigate(`/`, { replace: true });
       }
     } catch (error) {
       console.error("Error al enviar datos al backend:", error);
@@ -212,9 +218,7 @@ const Login = () => {
           </div>
         </div>
 
-        <div className="col-md-8">
-          <img src={imagen} alt="" className="tamaño-imagen shadow-lg" />
-        </div>
+        <div className="col-md-8"></div>
       </div>
     </div>
   );
