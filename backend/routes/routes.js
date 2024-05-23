@@ -7,6 +7,6 @@ const recuperarContraseñaController = require('../controllers/recuperarContrase
 
 router.post('/register', registroController);
 router.post('/iniciarsesion', iniciarsesionController);
-router.post('/recuperarcontraseña', recuperarContraseñaController);
+router.post('/recuperarcontrasena', recuperarContraseñaController);
 
 module.exports = router;

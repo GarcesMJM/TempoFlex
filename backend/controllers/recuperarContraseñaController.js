@@ -3,7 +3,7 @@ const admin = require('firebase-admin');
 const { auth } = require('../firebase/config.js')
 const firebaseAuth = require('firebase/auth');
 
-async function Login(req, res) {
+async function Recuperar(req, res) {
   try {
     const { email} = req.body;
   
@@ -22,4 +22,4 @@ async function Login(req, res) {
   }
 }
 
-module.exports = Login;
+module.exports = Recuperar;
