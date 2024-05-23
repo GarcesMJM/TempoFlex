@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../css/Login.css";
 import Swal from "sweetalert2";
-
 import user_icon from "../assets/person.png";
 import email_icon from "../assets/email.png";
 import password_icon from "../assets/password.png";
@@ -16,7 +15,7 @@ const Login = () => {
   const [action, setAction] = useState("Iniciar Sesión");
   const [showPwd, setShowPwd] = useState(false);
 
-  const handlenameChange = (e) => {
+  const handleNameChange = (e) => {
     setName(e.target.value);
   };
 
@@ -41,6 +40,7 @@ const Login = () => {
   const sendDataToBackend = async (e) => {
     if (!email || !password || !username) {
       Swal.fire("No puede haber campos vacíos", "", "error");
+      return;
     }
 
     try {
@@ -57,7 +57,10 @@ const Login = () => {
       if (data.message === true) {
         Swal.fire("Usuario registrado exitosamente", "", "success");
         setAction("Iniciar Sesión");
-        navigate("/");
+        navigate(`/`, {
+          replace: true,
+          state: { isLoggedIn: true },
+        });
       } else {
         Swal.fire("Error al registrar el usuario", "", "error");
       }
@@ -70,9 +73,10 @@ const Login = () => {
     }
   };
 
-  const sendDataToBackend2 = async (e, history) => {
+  const sendDataToBackend2 = async (e) => {
     if (!email || !password) {
       Swal.fire("No puede haber campos vacíos", "", "error");
+      return;
     }
     try {
       const response = await fetch("http://localhost:5000/iniciarsesion", {
@@ -89,7 +93,10 @@ const Login = () => {
 
       if (data.token) {
         localStorage.setItem("token", data.token);
-        navigate(`/`, { replace: true });
+        navigate(`/`, {
+          replace: true,
+          state: { isLoggedIn: true },
+        });
       }
     } catch (error) {
       console.error("Error al enviar datos al backend:", error);
@@ -120,7 +127,7 @@ const Login = () => {
                         className="cajatexto"
                         placeholder="Ingrese su nombre"
                         value={name}
-                        onChange={handlenameChange}
+                        onChange={handleNameChange}
                       />
                     </div>
                   )}
@@ -139,7 +146,6 @@ const Login = () => {
                       />
                     </div>
                   )}
-
                   {action === "Iniciar Sesión" ? (
                     <div></div>
                   ) : (

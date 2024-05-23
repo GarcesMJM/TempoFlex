@@ -5,7 +5,7 @@ const usersRef = db.collection('usuarios');
 
 async function registro(req, res) {
   try {
-    const { email, password, username } = req.body;
+    const { email, password, username, name, lastname } = req.body;
 
     const usernameExists = await usersRef.where('usuario', '==', username).get();
 
@@ -22,6 +22,8 @@ async function registro(req, res) {
     await usersRef.doc(userRecord.uid).set({
       email,
       usuario: username,
+      nombres: name, 
+      apellidos: lastname,
       foto_perfil: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
     });
 

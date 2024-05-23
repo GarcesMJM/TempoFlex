@@ -18,7 +18,6 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding-left: 100px;
   background: linear-gradient(#ffffff, whitesmoke, #f0f0f0, #cacaca);
 }
 .tamaño-imagen{
@@ -149,8 +148,11 @@
   border: solid 1px red;
   font-family: "Righteous", sans-serif;
 }
+<<<<<<< HEAD
 .regresar a{
   text-decoration: none;
 }
 
 
+=======
+>>>>>>> fcfd0e3f78fee28e171e9679247723e2f05c8fc1

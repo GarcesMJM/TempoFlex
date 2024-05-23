@@ -1,19 +1,41 @@
 import styles from '../css/Home.module.css';
 import Banner from '../components/Banner';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Home() {
+
+  const location = useLocation();
+  const { isLoggedIn } = location.state || { isLoggedIn: false };
+  console.log(isLoggedIn);
+
   const navigate = useNavigate();
+
+  const registerAction = () => {
+    navigate('/Login', { state: { action: 'Registrarse' } });
+  };
+
+  const logOut = () => {
+    localStorage.removeItem('token');
+    navigate('/Login');
+  }
+
   return (
     <div id={styles.body}> 
       <div className={styles.banner}>
         <Banner />
       </div>
       <div className={styles.content}>
-        <section className={styles.options}>
-          <button className={styles.buttons} onClick={() => navigate('/Login')}>Iniciar sesión</button>
-          <button className={styles.buttons}>Registrarse</button>
-        </section>
+        {!isLoggedIn ? (
+          <section className={styles.options}>
+            <button className={styles.buttons} onClick={() => navigate('/Login')}>Iniciar sesión</button>
+            <button className={styles.buttons} onClick={registerAction}>Registrarse</button>
+          </section>
+        ) : (
+          <section className={styles.options}>
+            <button className={styles.buttons} onClick={() => navigate('/Login')}>Gestionar Horario</button>
+            <button className={styles.buttons} onClick={logOut}>Cerrar Sesión</button>
+          </section>
+        )}
         <h1 className={styles.title}>¿Qué es TempoFlex?</h1>
         <p className={styles.text}>
           TempoFlex es una aplicación que te permite organizar tu horario de trabajo
