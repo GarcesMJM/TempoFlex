@@ -11,7 +11,6 @@ router.post('/register', registroController);
 router.post('/iniciarsesion', iniciarsesionController);
 router.post('/recuperarcontrasena', recuperarContraseñaController);
 router.post('/obteneractividades', obtenerActividadesController);
-
 router.post('/agregarActividades', agregarActividadesController);
 
 module.exports = router;
