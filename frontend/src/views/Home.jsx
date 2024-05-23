@@ -21,6 +21,7 @@ function Home() {
           forma podrás gestionar mucho mejor tu tiempo. Crea una cuenta o inicia sesión
           para empezar a usar TempoFlex.
         </p>
+        <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-512.png" alt="calendar" />
       </div>
     </div>
   );
