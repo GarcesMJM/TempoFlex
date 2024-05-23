@@ -11,3 +11,73 @@ body {
     color: black;
     font-family: "Righteous", sans-serif;
 }
+.form {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+input {
+    border-radius: 10px;
+    height: 2rem;
+    padding: 3px;
+    border: solid 2px #820000;
+    background-color: whitesmoke;
+    color: black;
+    font-size: large;
+    font-family: "Prompt", sans-serif;
+}
+textarea {
+    border-radius: 10px;
+    padding: 3px;
+    border: solid 2px #820000;
+    background-color: whitesmoke;
+    margin: 3vh;
+    color: black;
+    font-size: medium;
+    font-family: "Prompt", sans-serif;
+}
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.label {
+    color: black;
+    font-size: medium;
+    font-family: "Righteous", sans-serif;
+}
+.date {
+    display: flex;
+    flex-direction: column;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.button {
+    margin-top: auto;
+    background-color: whitesmoke;
+    border: solid 2px #820000;
+    color: black;
+    padding: 12px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 4vh;
+    font-family: "Righteous", sans-serif;
+    transition: 1s;
+}
+.button:hover {
+    color: whitesmoke;
+    background-color: #820000;
+    border: solid 2px whitesmoke;
+    box-shadow: 0 0 1rem red;
+    transition: 1s;
+}
