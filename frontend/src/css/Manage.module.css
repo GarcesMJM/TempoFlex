@@ -81,3 +81,30 @@ textarea {
     box-shadow: 0 0 1rem red;
     transition: 1s;
 }
+buttons {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    justify-content: space-evenly;
+}
+.submit {
+    margin-top: auto;
+    background-color: #820000;
+    border: solid 2px whitesmoke;
+    color: whitesmoke;
+    padding: 12px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 4vh;
+    font-family: "Righteous", sans-serif;
+    transition: 1s;
+}
+.submit:hover {
+    color: black;
+    background-color: whitesmoke;
+    border: solid 2px #820000;
+    box-shadow: 0 0 1rem red;
+    transition: 1s;
+}

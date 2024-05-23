@@ -14,11 +14,6 @@ function Home() {
     navigate("/Login", { state: { action: "Registrarse" } });
   };
 
-  const logOut = () => {
-    localStorage.removeItem("token");
-    navigate("/Login");
-  };
-
   return (
     <div id={styles.body}>
       <div className={styles.banner}>

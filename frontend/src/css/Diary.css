@@ -16,6 +16,36 @@
   color: black;
 }
 
+.back-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #007bff;
+}
+.back-button {
+  margin: 2rem;
+  background-color: whitesmoke;
+  border: solid 2px #820000;
+  color: black;
+  padding: 12px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  margin: 4vh;
+  font-family: "Righteous", sans-serif;
+  transition: 1s;
+}
+.back-button:hover {
+  color: whitesmoke;
+  background-color: #820000;
+  border: solid 2px whitesmoke;
+  box-shadow: 0 0 1rem red;
+  transition: 1s;
+}
+
 .calendar-view {
     display: flex;
     flex-direction: column;
@@ -65,4 +95,5 @@
     box-shadow: 0 0 1rem red;
     transition: 1ms;
   }
+
   

@@ -49,6 +49,10 @@ function Manage() {
       setDate("");
       setInitTime("00:00");
       setFinalTime("00:00");
+      navigate(`/agenda`, {
+        replace: true,
+        state: { isLoggedIn: true },
+      });
     } catch (error) {
       console.error("Error al enviar datos al backend:", error);
     }
@@ -61,7 +65,7 @@ function Manage() {
       <Banner />
       {!isLoggedIn ? (
         <div>
-          <h1>Inicia Sesión para gestionnar tu horario.</h1>
+          <h1>Inicia Sesión para gestionar tu horario.</h1>
         </div>
       ) : (
         <div>
@@ -85,11 +89,49 @@ function Manage() {
                 </div>
               </div>
               <button
-                className={styles.button}
+                className={styles.submit}
                 onClick={() => sendActivity()}
-              >
+                >
                 Añadir al calendario
               </button>
+              <div className={styles.buttons}>
+                <button
+                  className={styles.button}
+                  onClick={() => navigate(`/agenda`, {
+                    replace: true,
+                    state: { isLoggedIn: true },
+                  })}
+                >
+                  Ver mi Agenda
+                </button>
+                <button
+                  className={styles.button}
+                  onClick={() => navigate(`/Profile`, {
+                    replace: true,
+                    state: { isLoggedIn: true },
+                  })}
+                >
+                  Ir a mi perfil
+                </button>
+                <button
+                  className={styles.button}
+                  onClick={() => navigate(`/`, {
+                    replace: true,
+                    state: { isLoggedIn: true },
+                  })}
+                >
+                  Ir al Home
+                </button>
+                <button
+                  className={styles.button}
+                  onClick={() => navigate(`/`, {
+                    replace: true,
+                    state: { isLoggedIn: false },
+                  })}
+                >
+                  Cerrar sesión
+                </button>
+              </div>
             </form>
           </div>
         </div>
