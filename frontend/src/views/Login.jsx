@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "../css/Login.css";
 import Swal from "sweetalert2";
 import user_icon from "../assets/person.png";
@@ -7,6 +7,7 @@ import email_icon from "../assets/email.png";
 import password_icon from "../assets/password.png";
 
 const Login = () => {
+  const location = useLocation();
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
@@ -15,9 +16,13 @@ const Login = () => {
   const [action, setAction] = useState("Iniciar Sesión");
   const [showPwd, setShowPwd] = useState(false);
 
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
+  useEffect(() => {
+    if (location.state && location.state.action) {
+      setAction(location.state.action);
+    }
+  }, [location.state]);
+
+  const handleNameChange = (e) => setName(e.target.value);
 
   const handleLastnameChange = (e) => {
     setLastname(e.target.value);
