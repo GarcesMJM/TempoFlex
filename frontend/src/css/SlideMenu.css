@@ -2,13 +2,21 @@
 .menu-button {
     position: fixed;
     top: 20px;
-    right: 20px;
+    left: 20px;
     z-index: 1000;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: transparent;
     color: #fff;
     border: none;
     cursor: pointer;
+  }
+
+  .menu-button:hover{
+    color: whitesmoke;
+    background-color: #473a3a;
+    border: solid 2px whitesmoke;
+    box-shadow: 0 0 1rem white;
+    transition: 1ms;
   }
   
   .slide-menu {
@@ -17,20 +25,21 @@
     right: -250px; /* Oculto por defecto */
     width: 250px;
     height: 100%;
-    background-color: #333;
-    color: #fff;
+    background-color: #b1b1b1;
+    color: black;
     overflow-x: hidden;
     transition: 0.3s;
     z-index: 999;
   }
   
   .slide-menu.open {
-    right: 0; /* Muestra el menú */
+    left: 0; /* Muestra el menú */
   }
   
   .slide-menu ul {
     list-style-type: none;
-    padding: 0;
+    padding: 80px 0 0 0; /* Espacio para el botón de cierre */
+    margin: 0;
   }
   
   .slide-menu ul li {
@@ -38,12 +47,20 @@
   }
   
   .slide-menu ul li a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     display: block;
+    background-color: whitesmoke;
+    border: solid 2px #820000;
   }
   
   .slide-menu ul li a:hover {
-    background-color: #575757;
+    color: whitesmoke;
+    background-color: #820000;
+    border: solid 2px whitesmoke;
+    box-shadow: 0 0 1rem red;
+    transition: 1ms;
   }
+
+  
   
