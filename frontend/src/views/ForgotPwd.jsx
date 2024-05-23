@@ -1,27 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 //import "../css/ForgotPwd.css";
+import Swal from "sweetalert2";
 
-import imagen from "../Assets/cat-2934720_1280.jpg";
-import email_icon from "../Assets/email.png";
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDp11FAxsh_JtvCyzj8sf9OXbmBO4PGBt8",
-  authDomain: "petconnect2-4be50.firebaseapp.com",
-  projectId: "petconnect2-4be50",
-  storageBucket: "petconnect2-4be50.appspot.com",
-  messagingSenderId: "948988551923",
-  appId: "1:948988551923:web:afd3d0cff1d450ae278d86",
-  measurementId: "G-3JCCDR9K1G",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+import email_icon from "../assets/email.png";
 
 const ForgotPwd = () => {
   const [email, setEmail] = useState(""); // Estado para el correo electrónico
@@ -30,14 +12,37 @@ const ForgotPwd = () => {
     setEmail(e.target.value);
   };
 
+  const navigate = useNavigate();
+
   const recuperarpwd = async (e) => {
+    if (!email) {
+      Swal.fire("El campo no puede estar vacío", "", "error");
+      return;
+    }
+
     try {
-      await sendPasswordResetEmail(auth, email);
-    } catch (error) {
-      console.error(
-        "Error al obtener la información del usuario:",
-        error.response.data
+      const response = await fetch(
+        "http://localhost:5000/recuperarcontraseña",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
       );
+
+      const data = await response.json();
+
+      if (data.message === true) {
+        Swal.fire("Correo de recuperación enviado con éxito", "", "success");
+      } else {
+        Swal.fire("Error al recuperar contaseña", "", "error");
+      }
+
+      setEmail("");
+    } catch (error) {
+      console.error("Error al enviar datos al backend:", error);
     }
   };
 
@@ -72,16 +77,29 @@ const ForgotPwd = () => {
                     </div>
                   </div>
                   <div className="back">
-                    <Link to="/login">Regresar</Link>
+                    <button
+                      className="back-button"
+                      onClick={() => navigate("/")}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        height="24px"
+                        width="24px"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M15.707 4.293a1 1 0 010 1.414L10.414 11H20a1 1 0 110 2H10.414l5.293 5.293a1 1 0 01-1.414 1.414l-7-7a1 1 0 010-1.414l7-7a1 1 0 011.414 0z"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 </form>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="col-md-8">
-          <img src={imagen} alt="" className="tamaño-imagen shadow-lg" />
         </div>
       </div>
     </div>

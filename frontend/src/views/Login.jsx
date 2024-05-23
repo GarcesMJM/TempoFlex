@@ -225,7 +225,9 @@ const Login = () => {
                     <span>
                       ¿Olvidaste tu contraseña?
                       <br />
-                      <Link to="/olvidocontraseña">Ingresa aquí</Link>
+                      <a onClick={() => navigate("/olvidocontraseña")}>
+                        Ingresa aquí
+                      </a>
                     </span>
                   </div>
                 )}
@@ -257,9 +259,21 @@ const Login = () => {
                 </div>
 
                 <div className="back">
-                  <a>
-                    <Link to="/">Regresar</Link>
-                  </a>
+                  <button className="back-button" onClick={() => navigate("/")}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      height="24px"
+                      width="24px"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M15.707 4.293a1 1 0 010 1.414L10.414 11H20a1 1 0 110 2H10.414l5.293 5.293a1 1 0 01-1.414 1.414l-7-7a1 1 0 010-1.414l7-7a1 1 0 011.414 0z"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </form>
             </div>

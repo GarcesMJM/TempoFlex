@@ -52,9 +52,6 @@ function Home() {
               >
                 Gestionar Horario
               </button>
-              <button className={styles.buttons} onClick={logOut}>
-                Cerrar Sesión
-              </button>
             </section>
           </div>
         )}

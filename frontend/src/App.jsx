@@ -1,11 +1,12 @@
-import React from 'react';
-import './css/App.css';
-import Profile from './views/Profile';
-import Home from './views/Home';
-import Login from './views/Login';
-import Manage from './views/Manage';
-import Footer from './components/Footer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from "react";
+import "./css/App.css";
+import Profile from "./views/Profile";
+import Home from "./views/Home";
+import Login from "./views/Login";
+import Manage from "./views/Manage";
+import ForgotPwd from "./views/ForgotPwd";
+import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -17,12 +18,13 @@ function App() {
             <Route path="/Login" element={<Login />} />
             <Route path="/Profile" element={<Profile />} />
             <Route path="/Manage" element={<Manage />} />
+            <Route path="/olvidocontraseña" element={<ForgotPwd />} />
           </Routes>
         </div>
       </Router>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
