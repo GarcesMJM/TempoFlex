@@ -1,3 +1,21 @@
+.react-calendar__tile {
+  color: black; /* Color negro para los días de semana */
+}
+
+/* Estilo específico para los días del fin de semana */
+.react-calendar__month-view__days__day--weekend {
+  color: red; /* Color rojo para los días de fin de semana */
+}
+
+/* Asegúrate de que el calendario tenga la fuente adecuada */
+.react-calendar {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.react-calendar__navigation button {
+  color: black;
+}
+
 .calendar-view {
     display: flex;
     flex-direction: column;
@@ -41,6 +59,10 @@
   }
   
   button:hover {
-    background-color: #0056b3;
+    color: black;
+    background-color: #820000;
+    border: solid 2px whitesmoke;
+    box-shadow: 0 0 1rem red;
+    transition: 1ms;
   }
   
