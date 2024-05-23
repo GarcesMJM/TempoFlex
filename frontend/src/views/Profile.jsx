@@ -3,23 +3,37 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import '../css/Profile.css';
 import user_icon from "../assets/person.png";
+import email_icon from "../assets/email.png";
+import perfil from "../assets/perfil.png";
 
 const Profile = () => {
   
   const[editing, setEditing] = useState(false);
-  const[username, setUsername] = useState("");
-  const[email, setEmail] = useState("");
-  const[nombre, setNombre] = useState("");
-  const[apellido, setApellido] = useState("");
+  const[username, setUsername] = useState("srueda");
+  const[email, setEmail] = useState("srueda@u.com");
+  const[nombre, setNombre] = useState("Sebastian");
+  const[apellido, setApellido] = useState("Rueda");
   const[action, setAction] = useState("Editar Perfil");
 
 
   const handleEditChange = () => {
     setEditing(true);
+    setUsername("");
+    setEmail("");
+    setNombre("");
+    setApellido("");
   }
 
-  const handleGuardarChange = () => {
+  const handleGuardarChange = (e) => {
     setEditing(false);
+
+    // if(username || email || nombre || apellido == "")
+    //   {
+    //     setUsername("srueda");
+    //     setEmail("srueda@u.com");
+    //     setNombre("Sebastian");
+    //     setApellido("Rueda");
+    //   }
   }
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -46,13 +60,14 @@ const Profile = () => {
               <div className="underline"></div>
       </div>
       <div className="profile-picture">
-        <img src={user_icon}/>
+        <img src={perfil}/>
         </div>
         <form className="profile-info">
           <div className="inputs">
             {editing ? (
               <>
               <div className="input">
+                <img src={user_icon} alt="" />
                 <input
                   type="text"
                   className='texto'
@@ -63,6 +78,7 @@ const Profile = () => {
               </div>
 
               <div className="input">
+                <img src={email_icon} alt="" />
                 <input
                   type="email"
                   className='texto'
@@ -74,6 +90,7 @@ const Profile = () => {
               </div>
 
               <div className="input">
+                <img src={user_icon} alt="" />
                 <input
                   type="text"
                   className='texto'
@@ -84,6 +101,7 @@ const Profile = () => {
                 
             </div>
             <div className="input">
+            <img src={user_icon} alt="" />
                 <input
                   type="text"
                   className='texto'
@@ -103,6 +121,7 @@ const Profile = () => {
             (
               <>
               <div className="input">
+                <img src={user_icon} alt="" />
                 <input
                   type="text"
                   className='texto'
@@ -113,6 +132,7 @@ const Profile = () => {
               </div>
 
               <div className="input">
+                <img src={email_icon} alt="" />
                 <input
                   type="email"
                   className='texto'
@@ -124,6 +144,7 @@ const Profile = () => {
               </div>
 
               <div className="input">
+                <img src={user_icon} alt="" />
                 <input
                   type="text"
                   className='texto'
@@ -134,6 +155,7 @@ const Profile = () => {
                 
             </div>
             <div className="input">
+              <img src={user_icon} alt="" />
                 <input
                   type="text"
                   className='texto'
