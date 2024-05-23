@@ -1,7 +1,7 @@
 var express = require('express');
 const admin = require('firebase-admin');
 const cors = require('cors'); 
-const serviceAccount = require('C:\\Users\\Samuel Orrego\\Downloads\\firebaseclave.json'); //CAMBIAR LA RUTA POR SI NO DA
+const serviceAccount = require('./secrets/firebaseclave.json');
 
 const app = express();
 
