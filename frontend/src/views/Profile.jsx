@@ -6,12 +6,21 @@ import user_icon from "../assets/person.png";
 
 const Profile = () => {
   
+  const[editing, setEditing] = useState(false);
   const[username, setUsername] = useState("");
   const[email, setEmail] = useState("");
   const[nombre, setNombre] = useState("");
   const[apellido, setApellido] = useState("");
   const[action, setAction] = useState("Editar Perfil");
 
+
+  const handleEditChange = () => {
+    setEditing(true);
+  }
+
+  const handleGuardarChange = () => {
+    setEditing(false);
+  }
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   };
@@ -41,9 +50,8 @@ const Profile = () => {
         </div>
         <form className="profile-info">
           <div className="inputs">
-            {action == "Editar Perfil" ? (
-              <div></div>
-            ) : (
+            {editing ? (
+              <>
               <div className="input">
                 <input
                   type="text"
@@ -53,7 +61,6 @@ const Profile = () => {
                   onChange={handleUsernameChange}
                 />
               </div>
-            )}
 
               <div className="input">
                 <input
@@ -64,8 +71,9 @@ const Profile = () => {
                   onChange={handleEmailChange}
                 />
 
-            </div>
-            <div className="input">
+              </div>
+
+              <div className="input">
                 <input
                   type="text"
                   className='texto'
@@ -85,12 +93,69 @@ const Profile = () => {
                 />
             </div>
             <div
-              className={
-                action === "Editar Perfil" ? "submit gray" : "submit"
-              }
+              className="submit"
+              onClick={handleGuardarChange}
+            >
+              Guardar
+            </div>
+              </>
+            ) : 
+            (
+              <>
+              <div className="input">
+                <input
+                  type="text"
+                  className='texto'
+                  placeholder='Ingrese Usuario'
+                  value={username}
+                  readOnly
+                  onChange={handleUsernameChange}
+                />
+              </div>
+
+              <div className="input">
+                <input
+                  type="email"
+                  className='texto'
+                  placeholder='Ingrese su Email'
+                  value={email}
+                  readOnly
+                  onChange={handleEmailChange}
+                />
+
+              </div>
+
+              <div className="input">
+                <input
+                  type="text"
+                  className='texto'
+                  placeholder='Ingrese su nombre'
+                  value={nombre}
+                  readOnly
+                  onChange={handleNombreChange}
+                />
+                
+            </div>
+            <div className="input">
+                <input
+                  type="text"
+                  className='texto'
+                  placeholder='Ingrese su apellido'
+                  value={apellido}
+                  readOnly
+                  onChange={handleApellidoChange}
+                />
+            </div>
+            <div
+              className="submit"
+              onClick={handleEditChange}
             >
               Editar Perfil
-              </div>    
+            </div>
+              </>
+
+            )}
+                
           </div>
         </form> 
     </div>
