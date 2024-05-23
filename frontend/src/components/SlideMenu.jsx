@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import "../css/SlideMenu.css";
+import styles from "../css/Home.module.css";
+import { useNavigate } from "react-router-dom";
 
 const SlideMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navigate = useNavigate();
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const logOut = () => {
+    localStorage.removeItem("token");
+    navigate("/Login");
   };
 
   return (
@@ -44,17 +53,17 @@ const SlideMenu = () => {
       <div className={`slide-menu ${isOpen ? "open" : ""}`}>
         <ul>
           <li>
-            <a href="#">Item 1</a>
+            <a onClick={() => navigate("/perfil")}>Perfil</a>
           </li>
           <li>
-            <a href="#">Item 2</a>
+            <a onClick={() => navigate(`/Manage`, {
+                    replace: true,
+                    state: { isLoggedIn: true },
+                  })}>Agregar actividad</a>
           </li>
-          <li>
-            <a href="#">Item 3</a>
-          </li>
-          <li>
-            <a href="#">Item 4</a>
-          </li>
+          <button className={styles.buttons} onClick={logOut}>
+            Cerrar Sesión
+          </button>
         </ul>
       </div>
     </>

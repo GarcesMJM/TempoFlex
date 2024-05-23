@@ -58,6 +58,7 @@
 }
 
 .input{
+  position: relative;
   display: flex;
   align-items: center;
   margin: auto;
@@ -83,14 +84,15 @@
 .pwd-icon {
   color: #bb0c0c;
   right: 8%;
+  position: absolute;
 }
 
 .forgot-password{
-  padding-left: 35px;
-  margin-top:  27px;
+  padding-left: 300px;
+  margin-top:  30px;
   color: #797979;
   font-size: 18px;
-  align-items: center;
+  text-align: right;
 }
 
 .forgot-password span{
@@ -119,22 +121,6 @@
   font-family: "Righteous", sans-serif;
 }
 
-.back{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  width: 90px;
-  height: 45px;
-  color: black;
-  background: whitesmoke;
-  border: solid 2px #bb0c0c;
-  border-radius: 100px;
-  font-size: 19px;
-  font-weight: 700;
-  cursor: pointer;
-  font-family: "Righteous", sans-serif;
-}
 .form {
   display: flex;
   flex-direction: column;
@@ -150,4 +136,32 @@
 }
 .regresar a{
   text-decoration: none;
+}
+
+.back-button {
+
+  align-items: center;
+  padding: 10px;
+  background-color: whitesmoke;
+  border: solid 2px #820000;
+  color:black;
+  cursor: pointer;
+  border-radius: 80px;
+  margin-bottom: 10px;
+  position: fixed; /* Para espaciarlo del resto del contenido */
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.back-button svg {
+  margin-right: 5px;
+}
+
+.back-button:hover {
+  color: whitesmoke;
+    background-color: #820000;
+    border: solid 2px whitesmoke;
+    box-shadow: 0 0 1rem red;
+    transition: 1s;
 }
