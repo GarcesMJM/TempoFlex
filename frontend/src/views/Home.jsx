@@ -32,7 +32,9 @@ function Home() {
           </section>
         ) : (
           <section className={styles.options}>
-            <button className={styles.buttons} onClick={() => navigate('/Login')}>Gestionar Horario</button>
+            <button className={styles.buttons} onClick={() => navigate(`/Manage`, { replace: true, state: { isLoggedIn: true },})}>
+              Gestionar Horario
+            </button>
             <button className={styles.buttons} onClick={logOut}>Cerrar Sesión</button>
           </section>
         )}
