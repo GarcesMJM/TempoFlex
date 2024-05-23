@@ -11,15 +11,18 @@ function Manage() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className={styles.container}>
+      <Banner />
       {!isLoggedIn ? (
-        <div></div>
+        <div>
+          <h1>Inicia Sesión para gestionnar tu horario.</h1>
+        </div>
       ) : (
         <div>
-          Hola
+          <h1 className={styles.title}>Agregar actividades</h1>
         </div>
       )}
-      </div>
+    </div>
   );
 }
 

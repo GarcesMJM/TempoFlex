@@ -1,0 +1,13 @@
+body {
+    background: linear-gradient(#ffffff, whitesmoke, #f0f0f0, #cacaca);
+}
+.container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.title {
+    margin-top: 3rem;
+    color: black;
+    font-family: "Righteous", sans-serif;
+}

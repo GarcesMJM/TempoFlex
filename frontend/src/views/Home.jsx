@@ -1,6 +1,6 @@
 import styles from "../css/Home.module.css";
 import Banner from "../components/Banner";
-import SlideMenu from "./components/SlideMenu";
+import SlideMenu from "../components/SlideMenu";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function Home() {
