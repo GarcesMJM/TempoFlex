@@ -32,6 +32,10 @@ const Profile = () => {
 
   return (
     <div className="user-profile">
+      <div className="header">
+              <div className="text"> Perfil </div>
+              <div className="underline"></div>
+      </div>
       <div className="profile-picture">
         <img src={user_icon}/>
         </div>
@@ -79,8 +83,14 @@ const Profile = () => {
                   value={apellido}
                   onChange={handleApellidoChange}
                 />
-                
             </div>
+            <div
+              className={
+                action === "Editar Perfil" ? "submit gray" : "submit"
+              }
+            >
+              Editar Perfil
+              </div>    
           </div>
         </form> 
     </div>
