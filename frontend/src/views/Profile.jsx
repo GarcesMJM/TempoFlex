@@ -106,7 +106,6 @@ const Profile = () => {
                 <input
                   type="text"
                   className='texto'
-                  placeholder='Ingrese Usuario'
                   value={username}
                   readOnly
                   onChange={handleUsernameChange}
@@ -117,7 +116,6 @@ const Profile = () => {
                 <input
                   type="email"
                   className='texto'
-                  placeholder='Ingrese su Email'
                   value={email}
                   readOnly
                   onChange={handleEmailChange}
@@ -129,7 +127,6 @@ const Profile = () => {
                 <input
                   type="text"
                   className='texto'
-                  placeholder='Ingrese su nombre'
                   value={nombre}
                   readOnly
                   onChange={handleNombreChange}
@@ -140,7 +137,6 @@ const Profile = () => {
                 <input
                   type="text"
                   className='texto'
-                  placeholder='Ingrese su apellido'
                   value={apellido}
                   readOnly
                   onChange={handleApellidoChange}
