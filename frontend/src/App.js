@@ -14,7 +14,7 @@ function App() {
       
       <Route path="login" element={<Login />} />
 
-      <Route path="perfil" element={<Perfil />} />
+      <Route path="perfil" element={<Profile />} />
       
     </Routes>
   );
