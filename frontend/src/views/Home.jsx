@@ -38,22 +38,10 @@ function Home() {
           </section>
         ) : (
           <section className={styles.options}>
-<<<<<<< Updated upstream
             <button className={styles.buttons} onClick={() => navigate(`/Manage`, { replace: true, state: { isLoggedIn: true },})}>
               Gestionar Horario
             </button>
             <button className={styles.buttons} onClick={logOut}>Cerrar Sesión</button>
-=======
-            <button
-              className={styles.buttons}
-              onClick={() => navigate("/Login")}
-            >
-              Gestionar Horario
-            </button>
-            <button className={styles.buttons} onClick={logOut}>
-              Cerrar Sesión
-            </button>
->>>>>>> Stashed changes
           </section>
         )}
         <h1 className={styles.title}>¿Qué es TempoFlex?</h1>
