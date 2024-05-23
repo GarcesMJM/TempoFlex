@@ -1,5 +1,6 @@
 import styles from "../css/Home.module.css";
 import Banner from "../components/Banner";
+import SlideMenu from "./components/SlideMenu";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function Home() {
@@ -37,12 +38,25 @@ function Home() {
             </button>
           </section>
         ) : (
-          <section className={styles.options}>
-            <button className={styles.buttons} onClick={() => navigate(`/Manage`, { replace: true, state: { isLoggedIn: true },})}>
-              Gestionar Horario
-            </button>
-            <button className={styles.buttons} onClick={logOut}>Cerrar Sesión</button>
-          </section>
+          <div>
+            <SlideMenu />
+            <section className={styles.options}>
+              <button
+                className={styles.buttons}
+                onClick={() =>
+                  navigate(`/Manage`, {
+                    replace: true,
+                    state: { isLoggedIn: true },
+                  })
+                }
+              >
+                Gestionar Horario
+              </button>
+              <button className={styles.buttons} onClick={logOut}>
+                Cerrar Sesión
+              </button>
+            </section>
+          </div>
         )}
         <h1 className={styles.title}>¿Qué es TempoFlex?</h1>
         <p className={styles.text}>

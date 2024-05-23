@@ -1,0 +1,49 @@
+
+.menu-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .slide-menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Oculto por defecto */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    overflow-x: hidden;
+    transition: 0.3s;
+    z-index: 999;
+  }
+  
+  .slide-menu.open {
+    right: 0; /* Muestra el menú */
+  }
+  
+  .slide-menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .slide-menu ul li {
+    padding: 8px 16px;
+  }
+  
+  .slide-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .slide-menu ul li a:hover {
+    background-color: #575757;
+  }
+  
