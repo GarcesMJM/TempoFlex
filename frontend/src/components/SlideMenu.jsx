@@ -56,7 +56,10 @@ const SlideMenu = () => {
             <a onClick={() => navigate("/perfil")}>Perfil</a>
           </li>
           <li>
-            <a onClick={() => navigate("/Manage")}>Agregar actividad</a>
+            <a onClick={() => navigate(`/Manage`, {
+                    replace: true,
+                    state: { isLoggedIn: true },
+                  })}>Agregar actividad</a>
           </li>
           <button className={styles.buttons} onClick={logOut}>
             Cerrar Sesión
