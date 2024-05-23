@@ -1,7 +1,25 @@
+.login-cointaner{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.row.fila {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 .padre {
   display: flex;
   align-items: center;
+<<<<<<< Updated upstream
   justify-content: center;
+=======
+  width: 100%;
+>>>>>>> Stashed changes
   height: 100%;
   padding-left: 100px;
   background: linear-gradient(#ffffff, whitesmoke, #f0f0f0, #cacaca);
@@ -128,9 +146,17 @@
   justify-content: center;
   align-content: center;
 }
+<<<<<<< Updated upstream
 .gray{
   background: whitesmoke;
   color: black;
   border: solid 1px red;
   font-family: "Righteous", sans-serif;
 }
+=======
+.regresar a{
+  text-decoration: none;
+}
+
+
+>>>>>>> Stashed changes
